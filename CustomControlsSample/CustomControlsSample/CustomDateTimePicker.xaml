@@ -1,0 +1,36 @@
+﻿<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomControlsSample.CustomDateTimePicker"
+             ControlTemplate="{DynamicResource CustomDateTimePickerTemplate}">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="CustomDateTimePickerTemplate">
+                <Grid Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.ColumnSpan="2"
+                        Text="{TemplateBinding Caption}" />
+                    <DatePicker
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="MyDatePicker"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        DateSelected="DatePicker_DateSelected" />
+                    <TimePicker
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="MyTimePicker"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        PropertyChanged="TimePicker_PropertyChanged" />
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentView.Resources>
+</ContentView>
