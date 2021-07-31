@@ -11,6 +11,7 @@ namespace CustomControlsSample
 
          BindingContext = new MainPageViewModel
          {
+            Caption = "Welcome to my custom controls sample!",
             StartDateTime = new DateTime(2020, 12, 15, 20, 35, 0),
             EndDateTime = new DateTime(2020, 12, 16, 19, 35, 0)
          };

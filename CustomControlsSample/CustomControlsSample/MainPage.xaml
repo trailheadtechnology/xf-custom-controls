@@ -4,7 +4,7 @@
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to my custom controls sample!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Label Text="{Binding Caption}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <StackLayout 
             Padding="16">

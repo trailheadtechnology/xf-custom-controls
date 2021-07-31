@@ -5,26 +5,18 @@ using Xamarin.Forms.Xaml;
 namespace CustomControlsSample
 {
    [XamlCompilation(XamlCompilationOptions.Compile)]
-   public partial class CustomDateTimePicker : ContentView
+   public partial class CustomDateTimePicker
    {
-      DatePicker myDatePicker;
-      TimePicker myTimePicker;
-
       public CustomDateTimePicker()
       {
          InitializeComponent();
       }
 
-      // https://dotnetdevaddict.co.za/2020/08/16/templated-controls-in-xamarin-forms/
-      protected override void OnApplyTemplate()
-      {
-         base.OnApplyTemplate();
-
-         myDatePicker = (DatePicker)GetTemplateChild("MyDatePicker");
-         myTimePicker = (TimePicker)GetTemplateChild("MyTimePicker");
-      }
-
-      public static readonly BindableProperty CaptionProperty = BindableProperty.Create("Caption", typeof(string), typeof(CustomDateTimePicker), "");
+      public static readonly BindableProperty CaptionProperty = BindableProperty.Create(
+         "Caption", 
+         typeof(string), 
+         typeof(CustomDateTimePicker), 
+         "");
 
       public string Caption
       {
@@ -59,8 +51,8 @@ namespace CustomControlsSample
 
       public void SetControlValues(DateTime dateTimeToSet)
       {
-         myDatePicker.Date = dateTimeToSet.Date;
-         myTimePicker.Time = dateTimeToSet.TimeOfDay;
+         MyDatePicker.Date = dateTimeToSet.Date;
+         MyTimePicker.Time = dateTimeToSet.TimeOfDay;
       }
 
       void DatePicker_DateSelected(object sender, DateChangedEventArgs e)

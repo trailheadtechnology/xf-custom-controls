@@ -18,5 +18,12 @@ namespace CustomControlsSample
          get => endDateTime;
          set => SetProperty(ref endDateTime, value);
       }
+
+      string caption;
+      public string Caption
+      {
+         get => caption;
+         set => SetProperty(ref caption, value);
+      }
    }
 }
