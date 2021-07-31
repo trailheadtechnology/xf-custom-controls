@@ -52,7 +52,7 @@ namespace CustomControlsSample
       {
          get => (DateTime)GetValue(SelectedDateTimeProperty);
          // The setter is not called when the binded property change
-         // Need to handle it on the backing property
+         // Need to handle it on the backing property (OnPropertyChanged)
          // It is used when the controls are changed by the user
          set => SetValue(SelectedDateTimeProperty, value);
       }
