@@ -1,8 +1,55 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CustomControlsSample.App">
     <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="BoxHeadTextColor">White</Color>
+            <Color x:Key="BoxHeadTitleContainerColor">#282828</Color>
+            <Color x:Key="PageBackgroundColor">#F3F3F4</Color>
+
+            <Style x:Key="FrameContainerStyle" TargetType="Frame">
+                <Setter Property="OutlineColor" Value="{StaticResource PageBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="HasShadow" Value="false" />
+                <Setter Property="VerticalOptions" Value="Start" />
+            </Style>
+
+            <Style x:Key="FrameContentStyle" TargetType="StackLayout">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Spacing" Value="0" />
+                <Setter Property="Padding" Value="8" />
+            </Style>
+
+            <Style
+                x:Key="BoxHeadTitle"
+                TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BoxHeadTextColor}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style
+                x:Key="BoxHeadIcon"
+                TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style
+                x:Key="BoxHeadTitleContainer"
+                TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{StaticResource BoxHeadTitleContainerColor}" />
+                <Setter Property="MinimumHeightRequest" Value="35" />
+                <Setter Property="Padding" Value="8,8,16,8" />
+            </Style>
+            
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>

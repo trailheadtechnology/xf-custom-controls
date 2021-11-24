@@ -2,41 +2,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrolssample="clr-namespace:CustomControlsSample"
              x:Class="CustomControlsSample.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="{Binding Caption}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <StackLayout 
-            Padding="16">
-            <customcontrolssample:CustomDateTimePicker
-                SelectedDateTime="{Binding StartDateTime, Mode=TwoWay}"
-                Caption="Start Date"/>
-            <customcontrolssample:CustomDateTimePicker
-                SelectedDateTime="{Binding EndDateTime, Mode=TwoWay}"
-                Caption="End Date"/>
-        </StackLayout>
-        <Frame BackgroundColor="Wheat" Padding="24" CornerRadius="0">
-            <StackLayout
-                Spacing="16">
-                <Label HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="18">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Start: "/>
-                            <Span Text="{Binding StartDateTime, Mode=TwoWay}"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="18">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="End: "/>
-                            <Span Text="{Binding EndDateTime, Mode=TwoWay}"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </StackLayout>
-        </Frame>
+    <customcontrolssample:Container
+        HeaderTitleIsVisible="True"
+        HeaderTitle="{Binding Caption}">
 
-    </StackLayout>
+        <StackLayout>
+
+            <!--Select dates-->
+            <customcontrolssample:Container
+                OnIconTappedCommand="{Binding CleanDate}"
+                Icon="&#xf2ed;"
+                IconIsVisible="True"
+                HeaderTitle="Select your dates"
+                HeaderTitleIsVisible="True">
+                <StackLayout 
+                    Padding="16">
+                    <customcontrolssample:CustomDateTimePicker
+                    SelectedDateTime="{Binding StartDateTime, Mode=TwoWay}"
+                    Caption="Start Date"/>
+                    <customcontrolssample:CustomDateTimePicker
+                    SelectedDateTime="{Binding EndDateTime, Mode=TwoWay}"
+                    Caption="End Date"/>
+                </StackLayout>
+            </customcontrolssample:Container>
+
+            <!--Show selected dates-->
+            <customcontrolssample:Container
+                HeaderTitle="Selected dates">
+                <StackLayout
+                    Spacing="16">
+                    <Label HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="18">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Start: "/>
+                                <Span Text="{Binding StartDateTime, Mode=TwoWay}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="18">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="End: "/>
+                                <Span Text="{Binding EndDateTime, Mode=TwoWay}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </customcontrolssample:Container>
+
+        </StackLayout>
+
+    </customcontrolssample:Container>
 
 </ContentPage>
